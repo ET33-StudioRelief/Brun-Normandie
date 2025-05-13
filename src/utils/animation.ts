@@ -47,3 +47,27 @@ export function animateTestimonialOnView() {
     );
   });
 }
+
+export function animateListItemsOnView() {
+  const lists = document.querySelectorAll<HTMLElement>('.list, .faq_list');
+
+  lists.forEach((list) => {
+    const children = Array.from(list.children) as HTMLElement[];
+    gsap.fromTo(
+      children,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+        stagger: 0.2, // délai entre chaque item
+        scrollTrigger: {
+          trigger: list,
+          start: 'top 85%',
+          toggleActions: 'play reverse play reverse',
+        },
+      }
+    );
+  });
+}

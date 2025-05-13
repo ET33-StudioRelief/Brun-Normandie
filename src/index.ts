@@ -1,6 +1,10 @@
 import './index.css';
 
-import { animateSectionsOnView, animateTestimonialOnView } from './utils/animation';
+import {
+  animateListItemsOnView,
+  animateSectionsOnView,
+  animateTestimonialOnView,
+} from './utils/animation';
 import { initializeCheckboxStates } from './utils/checkboxState';
 
 // Initialise les états des checkboxes et lance l'animation des sections
@@ -8,6 +12,7 @@ function init() {
   initializeCheckboxStates();
   animateSectionsOnView();
   animateTestimonialOnView();
+  animateListItemsOnView();
 }
 
 // S'assure que le DOM est complètement chargé
