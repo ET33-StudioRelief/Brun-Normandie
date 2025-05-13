@@ -1,0 +1,32 @@
+@media screen and (max-width: 615px) {
+  #hero-list {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .hero_text-content {
+    flex-direction: column;
+  }
+  .hero_col.is-right {
+    width: 100%;
+  }
+  #hero-btn-wrap {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 745px) {
+  .form_personal-info .display-inlineflex.is-gap-medium {
+    flex-direction: column;
+  }
+  .hero_form-input {
+    width: 100%;
+  }
+}
+/* Style quand la case est cochée */
+.hero_form-input.is-checked {
+  border: 2px solid #ff8b0f;
+  /*background: #fbeaec;*/
+}
+.hero_form-input.is-checked .hero_form-check-embed {
+  display: block;
+}

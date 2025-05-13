@@ -1,7 +1,19 @@
-import { greetUser } from '$utils/greet';
+import './index.css';
 
-window.Webflow ||= [];
-window.Webflow.push(() => {
-  const name = 'John Doe';
-  greetUser(name);
-});
+import { animateSectionsOnView, animateTestimonialOnView } from './utils/animation';
+import { initializeCheckboxStates } from './utils/checkboxState';
+
+// Initialise les états des checkboxes et lance l'animation des sections
+function init() {
+  initializeCheckboxStates();
+  animateSectionsOnView();
+  animateTestimonialOnView();
+}
+
+// S'assure que le DOM est complètement chargé
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  // Si le DOM est déjà chargé, on initialise directement
+  init();
+}
