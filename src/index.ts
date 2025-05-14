@@ -8,10 +8,10 @@ import {
 import { initializeCheckboxStates } from './utils/checkboxState';
 import { loadFinsweetCookieConsent, loadMultiStep } from './utils/loadScript';
 
-// Charger Finsweet Cookie Consent le plus tôt possible
+// Script cookie consent and multi step form
 loadFinsweetCookieConsent();
+loadMultiStep();
 
-// Initialise les états des checkboxes et lance l'animation des sections
 function init() {
   initializeCheckboxStates();
   animateSectionsOnView();
@@ -19,15 +19,8 @@ function init() {
   animateListItemsOnView();
 }
 
-// S'assure que le DOM est complètement chargé
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
-  // Si le DOM est déjà chargé, on initialise directement
   init();
 }
-
-// Charger Multi Step après le DOM
-document.addEventListener('DOMContentLoaded', () => {
-  loadMultiStep();
-});
