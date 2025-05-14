@@ -3,15 +3,18 @@
     flex-direction: column;
   }
 }
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1350px) {
   .hero_text-content {
     flex-direction: column;
   }
   .hero_col.is-right {
     width: 100%;
   }
-  #hero-btn-wrap {
-    justify-content: center;
+  .hero_heading-content {
+    gap: 1rem;
+  }
+  .hero_col.is-left {
+    gap: 1rem;
   }
 }
 @media screen and (max-width: 745px) {
