@@ -3,7 +3,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const isDesktop = () => window.matchMedia('(min-width: 768px)').matches;
+
 export function animateSectionsOnView() {
+  if (!isDesktop()) return;
   const selectors = ['.section_benefices', '.section_features', '.section_faq'];
   const elements = document.querySelectorAll<HTMLElement>(selectors.join(','));
 
@@ -18,8 +21,8 @@ export function animateSectionsOnView() {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: el,
-          start: 'top 80%', // quand le haut de la section atteint 80% du viewport
-          toggleActions: 'play reverse play reverse', // joue l'animation une seule fois
+          start: 'top 80%',
+          toggleActions: 'play reverse play reverse',
         },
       }
     );
@@ -27,6 +30,7 @@ export function animateSectionsOnView() {
 }
 
 export function animateTestimonialOnView() {
+  if (!isDesktop()) return;
   const testimonials = document.querySelectorAll<HTMLElement>('.section_testimonial');
 
   testimonials.forEach((el) => {
