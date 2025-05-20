@@ -53,6 +53,7 @@ export function animateTestimonialOnView() {
 }
 
 export function animateListItemsOnView() {
+  if (!isDesktop()) return;
   const lists = document.querySelectorAll<HTMLElement>('.list, .faq_list');
 
   lists.forEach((list) => {
