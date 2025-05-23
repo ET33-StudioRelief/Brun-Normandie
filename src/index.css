@@ -16,6 +16,11 @@
   .hero_col.is-left {
     gap: 1rem;
   }
+  .hero_list-wrapper {
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
 }
 @media screen and (max-width: 745px) {
   .form_personal-info .display-inlineflex.is-gap-medium {
